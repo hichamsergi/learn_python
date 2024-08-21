@@ -4,7 +4,7 @@ The porpouse of this README is keeping a record of every key concept I learned i
 
 ### Chapter 1
 
-* **01 List comprehension**:
+* **01_List comprehension**:
 
     The purpose of this challenge was create a matrix of 3 cordenades, [_x_,_y_,_z_], excluding the cordenades that sum a given number _n_.
 
