@@ -8,6 +8,7 @@ Los tipos de datos en Python son los siguientes:
    - **`int()`**: Convierte un valor a entero si es posible.
 
    - **Operaciones**:
+   
     - Suma: `a + b`.
     - Resta: `a - b`.
     - Multiplicación: `a * b`.
