@@ -214,11 +214,6 @@ Para manejar posibles errores, y administrar el codigo de una mejor forma, pytho
 
 ### **Manejo de Excepciones**:
 
-#### **Puntos clave:**
-- Diferenciar entre errores y excepciones.
-- Excepciones comunes en Python.
-- Aprender a manejar excepciones.
-
 #### **Errores vs. Excepciones**
 - **Errores**: Son problemas serios del sistema, como problemas con el hardware o el sistema operativo, que suelen hacer que el programa deje de funcionar.
 
