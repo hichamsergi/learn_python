@@ -8,13 +8,13 @@ Los tipos de datos en Python son los siguientes:
    - **`int()`**: Convierte un valor a entero si es posible.
 
    - **Operaciones**:
-    - Suma: `a + b`
-    - Resta: `a - b`
-    - Multiplicación: `a * b`
-    - División (float): `a / b`
-    - División entera: `a // b`
-    - Potencia: `a ** b`
-    - Módulo: `a % b`
+    - Suma: `a + b`.
+    - Resta: `a - b`.
+    - Multiplicación: `a * b`.
+    - División (float): `a / b`.
+    - División entera: `a // b`.
+    - Potencia: `a ** b`.
+    - Módulo: `a % b`.
 
 ### 2. **Float (float)**:
    - Números en coma flotante, es decir, que contienen una parte decimal.
