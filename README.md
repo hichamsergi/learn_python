@@ -8,14 +8,13 @@ Los tipos de datos en Python son los siguientes:
    - **`int()`**: Convierte un valor a entero si es posible.
 
    - **Operaciones**:
-   
-    - Suma: `a + b`.
-    - Resta: `a - b`.
-    - Multiplicación: `a * b`.
-    - División (float): `a / b`.
-    - División entera: `a // b`.
-    - Potencia: `a ** b`.
-    - Módulo: `a % b`.
+     - Suma: `a + b`.
+     - Resta: `a - b`.
+     - Multiplicación: `a * b`.
+     - División (float): `a / b`.
+     - División entera: `a // b`.
+     - Potencia: `a ** b`.
+     - Módulo: `a % b`.
 
 ### 2. **Float (float)**:
    - Números en coma flotante, es decir, que contienen una parte decimal.
@@ -27,11 +26,11 @@ Los tipos de datos en Python son los siguientes:
    - Cadenas de texto que se representan entre comillas simples o dobles.
    - Ejemplo: `"Hola"`, `'Mundo'`, `"123"`.
    - **Funciones útiles**:
-    - **`len()`**: Devuelve la longitud de la cadena.
-    - **`upper()`**: Convierte la cadena a mayúsculas.
-    - **`lower()`**: Convierte la cadena a minúsculas.
-    - **`split()`**: Divide la cadena en una lista según un delimitador.
-    - **`join()`**: Une elementos de una lista en una cadena usando un delimitador.
+     - **`len()`**: Devuelve la longitud de la cadena.
+     - **`upper()`**: Convierte la cadena a mayúsculas.
+     - **`lower()`**: Convierte la cadena a minúsculas.
+     - **`split()`**: Divide la cadena en una lista según un delimitador.
+     - **`join()`**: Une elementos de una lista en una cadena usando un delimitador.
 
 ### 4. **Boolean (bool)**:
    - Valores lógicos que solo pueden ser `True` o `False`.
@@ -215,7 +214,7 @@ Para manejar posibles errores, y administrar el codigo de una mejor forma, pytho
 
 ### **Manejo de Excepciones**:
 
-#### **Objetivos**
+#### **Puntos clave:**
 - Diferenciar entre errores y excepciones.
 - Excepciones comunes en Python.
 - Aprender a manejar excepciones.
