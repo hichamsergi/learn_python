@@ -209,10 +209,9 @@ print(mi_diccionario.get("nombre", "No encontrado"))  # Output: Juan
 
 ----------------
 
-Para manejar posibles errores, y administrar el codigo de una mejor forma, python permite el _manejo de excepciones_. De esta forma pretendemos que nuestro codigo identifique situaciones inesperadas durante su ejecución, para que estas no lo interrumpan accidentalmente:
-
-
 ### **Manejo de Excepciones**:
+
+Para manejar posibles errores, y administrar el codigo de una mejor forma, python permite el _manejo de excepciones_. De esta forma pretendemos que nuestro codigo identifique situaciones inesperadas durante su ejecución, para que estas no lo interrumpan accidentalmente:
 
 #### **Errores vs. Excepciones**
 - **Errores**: Son problemas serios del sistema, como problemas con el hardware o el sistema operativo, que suelen hacer que el programa deje de funcionar.
@@ -256,7 +255,7 @@ Para manejar posibles errores, y administrar el codigo de una mejor forma, pytho
   import non_existent_module  # Genera ImportError
   ```
 
-#### **Manejo de excepciones**
+#### **Como manejar las excepciones?**
 Python proporciona la estructura `try-except` para gestionar excepciones y evitar que el programa se detenga bruscamente.
 
 - **`try`**: Se coloca el código que puede generar una excepción.
@@ -293,3 +292,92 @@ finally:
  ```
 
 ---
+
+### **Programación Orientada a Objetos (OOP):**
+
+Es un paradigma de la programación que pretende organizar el codigo en "objetos", los cuales representan elementos del mundo real. Los objetos combinan *atributos* y funcionalidades(*métodos*) a traves de estructuras llamadas clases.
+
+#### Clases y objetos:
+
+Las clases son los moldes, o platillas, a traves de las cuales generamos los objeto, que son instancias de dichas clases.
+
+Los objetos son elementos, pertenecientes a una clase, que tienen *atributos* y *métodos*.
+
+```python
+
+# Ejemplo de clase:
+class Car:
+
+    def __init__(self, color, velocidad):
+        self.color = color  # atributo de instancia
+        self.velocidad = velocidad
+
+    #Método de la instancia:
+    def acelerar(self, incremento):
+        self.velocidad += incremento
+        print(f"Velocidad actual: {self.velocidad} km/h")
+
+# Creando un objeto de la clase Car
+mi_auto = Car("rojo", 50)
+
+#Haciendo uso del método acelerar:
+mi_auto.acelerar(20)
+```
+
+
+#### Atributos de clase *vs* Atributos de instancia:
+
+**Atributos de clase:** Se comparten con todos los demas objetos de una misma clase. Se definen fuera de cualqueir método.
+
+**Atributos de instancia:** Son atributos unicos para cada y se definen en el método `__init__`.
+
+
+```python
+class Car:
+
+  color = "rojo" #atributo de clase
+
+  def __init__(self, color, velocidad):
+      self.color = color  # atributo de instancia
+      self.velocidad = velocidad
+
+# Acceso directo al atributo de velocidad del objeto mi_auto:
+mi_auto.velocidad = 50
+```
+
+#### Método `__init__`:
+
+El metodo `__init__` inicializa los atributos de instancia al crear un objeto. Podemos asignar valores por defecto a los atributos de instancia:
+
+```python
+class Car:
+
+  # __init__ con valores por defecto:
+  def __init__(self, color="red", velocidad=0):
+      self.color = color
+      self.velocidad = velocidad
+
+#Objeto con valores asignados:
+coche1 = Car("blue", 120)
+#Objeto con valores por defecto:
+coche2 = Car()
+```
+
+El resto de métodos que no sean `__init__` operan sobre los atributos que se le han asignado al objeto en dicho método inicial:
+
+```python
+class Car:
+
+  def __init__(self, color="red", velocidad=0):
+      self.color = color
+      self.velocidad = velocidad
+  
+  #Método para acelerar el coche:
+  def acelerar(self, acelerar):
+      self.velocidad += acelerar
+      
+
+coche1 = Car("blue", 120)
+#Uso del método acelerar:
+coche1.acelerar(20)
+```
