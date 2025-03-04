@@ -1,27 +1,29 @@
 if __name__ == '__main__':
-    records = []
-    lowest = 100
-    s_lowest = 100
-    list_names = []
 
+    max_low=float('inf')
+    sec_low=float('inf')
+
+    records=[]
+   
     for _ in range(int(input())):
         name = input()
         score = float(input())
 
-        if score < lowest:
-            s_lowest = lowest
-            lowest = score
-            
-        elif score < s_lowest and score > lowest:
-            s_lowest = score
+        #Si la puntuación es mas baja que la mas baja:
+        if score < max_low:
+            sec_low = max_low
+            max_low = score
+        #Si la puntuación es la segunda mas baja:
+        elif score < sec_low and score != max_low:
+            sec_low = score
         
-        records.append([name, score])
+        #Añadimos el record a records
+        records.append([name,score])
 
-    for name_record in records:
-        if name_record[1] == s_lowest:
-            list_names.append(name_record[0])
+    #Localizar y mostrar los nombres que coinciden con la segunda puntuación mas baja:
 
-    list_names = sorted(list_names)
+    names=[rec[0] for rec in records if rec[1] == sec_low]
+    names.sort()
 
-    for f_name in list_names:
-        print(f_name)
+    for rec in names:
+        print(rec)
