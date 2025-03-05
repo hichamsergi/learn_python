@@ -1,39 +1,30 @@
 if __name__ == '__main__':
-    
     N = int(input())
 
-    list = []
+    final=[]
 
+    # Entramos datos 'N':
     for _ in range(N):
-
-        comm = input()
-
-        comm = comm.split()
-
-        if comm[0] == "insert":
-
-            list.insert( int(comm[1]), int(comm[2]) )
         
-        elif comm[0] == "print":
-            
-            print(list)
+        command = input().split()
 
-        elif comm[0] == "remove":
-
-            list.remove( int(comm[1]) )
+        if command[0] == "insert":
+            final.insert(int(command[1]), int(command[2]))
         
-        elif comm[0] == "append":
+        elif command[0] == "remove":
+            final.remove(int(command[1]))
 
-            list.append( int(comm[1]) )
-        
-        elif comm[0] == "sort":
+        elif command[0] == "append":
+            final.append(int(command[1]))
 
-            list.sort()
-        
-        elif comm[0] == "pop":
-        
-            list.pop()
+        elif command[0] == "sort":
+            final.sort()
 
-        elif comm[0] == "reverse":
-            
-            list.reverse()
+        elif command[0] == "pop":
+            final.pop()
+
+        elif command[0] == "reverse":
+            final.reverse()
+
+        elif command[0] == "print":
+            print(final)
