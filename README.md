@@ -1,4 +1,4 @@
-# APUNTES PYTHON x DATA ENGINEER:
+# APUNTES PYTHON:
 
 Los tipos de datos en Python son los siguientes:
 
