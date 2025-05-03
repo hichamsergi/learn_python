@@ -31,6 +31,8 @@ Los tipos de datos en Python son los siguientes:
      - **`lower()`**: Convierte la cadena a minúsculas.
      - **`split()`**: Divide la cadena en una lista según un delimitador.
      - **`join()`**: Une elementos de una lista en una cadena usando un delimitador.
+     - **`find()`**: Encuentra el indice del primer elemento. ``name.find("world")``
+     - **`replace()`**: Remplaza el primer elemento por el segundo. ``name.replace("Joan","Hicham")`` 
 
 ### 4. **Boolean (bool)**:
    - Valores lógicos que solo pueden ser `True` o `False`.
@@ -345,7 +347,7 @@ class Car:
 mi_auto.velocidad = 50
 ```
 
-#### Método `__init__`:
+#### Método ```__init__```
 
 El metodo `__init__` inicializa los atributos de instancia al crear un objeto. Podemos asignar valores por defecto a los atributos de instancia:
 
