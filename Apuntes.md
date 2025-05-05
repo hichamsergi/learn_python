@@ -50,8 +50,6 @@ corrected_str = re.sub("To be corrected","correction",total_string)
 
 ----
 
-### COSAS DESCONOCIDAS:
-
 * **String Slicing:** Obtención de multiples carácteres de un mismo string accediendo al rango que ocupan dichos carácteres. 
 Ejemplos:
 
