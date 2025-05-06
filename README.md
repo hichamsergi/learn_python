@@ -215,7 +215,7 @@ print(mi_diccionario.get("nombre", "No encontrado"))  # Output: Juan
 Las funciones son bloques de código reutilizable que ejecutan ciertas operaciones descritas en el interior de dicha función. Hay dos tipos de funciones, **las predefinidas** y **las definidas por el usuario**.
 
 #### Como definir una función:
-```
+```python
 def add(a):
   """
   Sumar 1 a un número proporcionado, "a"
@@ -268,7 +268,7 @@ Para manejar posibles errores, y administrar el codigo de una mejor forma, pytho
   ```python
   result = "hello" + 5  # Genera TypeError
   ```
-- **AttributeError**: Ocurre al intentar acceder a un atributo o método inexistente de un objeto.
+- **AttributeError**: Ocurre al intentar acceder a un atributo o método inexistenten1 / (n1-5) de un objeto.
   ```python
   text = "ejemplo"
   missing = text.some_method()  # Genera AttributeError
