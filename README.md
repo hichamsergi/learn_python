@@ -72,6 +72,7 @@ print(42 in mi_lista)  # Output: True
 - **`remove()`**: Elimina la primera ocurrencia de un elemento.
 - **`pop()`**: Elimina y retorna el último elemento (o el que esté en el índice especificado).
 - **`sort()`**: Ordena la lista en su lugar (puede ser ascendente o descendente).
+- **`sorted()`**: Devuelve una lista con la secuencia de elementos ordenada, sin modificar la lista original.
 - **`reverse()`**: Invierte el orden de los elementos.
 
 #### Ejemplos de funciones:
@@ -208,10 +209,30 @@ mi_diccionario.update({"edad": 30, "ciudad": "Madrid"})
 # Obtener un valor con get (evita errores si la clave no existe)
 print(mi_diccionario.get("nombre", "No encontrado"))  # Output: Juan
 ```
+----------------
+### **Funciones**
+
+Las funciones son bloques de código reutilizable que ejecutan ciertas operaciones descritas en el interior de dicha función. Hay dos tipos de funciones, **las predefinidas** y **las definidas por el usuario**.
+
+#### Como definir una función:
+```
+def add(a):
+  """
+  Sumar 1 a un número proporcionado, "a"
+  """
+  a += 1
+
+  return(a)
+```
+Podemos obtener información del funcionamiento de la función, definido en el comentario previo al bloque de codigo, utilizando ``help(add)``. Esto nos mostrará:
+```
+Sumar 1 a un número proporcionado, "a"
+```
+
 
 ----------------
 
-### **Manejo de Excepciones**:
+### **Manejo de Excepciones**
 
 Para manejar posibles errores, y administrar el codigo de una mejor forma, python permite el _manejo de excepciones_. De esta forma pretendemos que nuestro codigo identifique situaciones inesperadas durante su ejecución, para que estas no lo interrumpan accidentalmente:
 
@@ -329,7 +350,7 @@ mi_auto.acelerar(20)
 
 #### Atributos de clase *vs* Atributos de instancia:
 
-**Atributos de clase:** Se comparten con todos los demas objetos de una misma clase. Se definen fuera de cualqueir método.
+**Atributos de clase:** Se comparten con todos los demas objetos de una misma clase. Se ![alt text](image.png)inen fuera de cualqueir método.
 
 **Atributos de instancia:** Son atributos unicos para cada y se definen en el método `__init__`.
 
