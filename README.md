@@ -331,7 +331,7 @@ Los objetos son elementos, pertenecientes a una clase, que tienen *atributos* y 
 # Ejemplo de clase:
 class Car:
 
-    def __init__(self, color, velocidad):
+    def __init__(self, color, velocidad): # Metodo constructor
         self.color = color  # atributo de instancia
         self.velocidad = velocidad
 
@@ -370,7 +370,7 @@ mi_auto.velocidad = 50
 
 #### Método ```__init__```
 
-El metodo `__init__` inicializa los atributos de instancia al crear un objeto. Podemos asignar valores por defecto a los atributos de instancia:
+El metodo `__init__` inicializa los atributos de instancia al crear un objeto, también es llamado metodo constructor. Podemos asignar valores por defecto a los atributos de instancia:
 
 ```python
 class Car:
@@ -404,3 +404,18 @@ coche1 = Car("blue", 120)
 #Uso del método acelerar:
 coche1.acelerar(20)
 ```
+
+Podemos acceder, o modificar, los atributos de objeto haciendo uso de los *metodos*, de la *clase*, para así modificar los atributos del objeto:
+
+```python
+coche1.acelerar(20) # Aumenta la velocidad del coche1 en 20
+coche2.acelerar(50) # Aumenta la velocidad del coche2 en 50
+```
+
+Si queremos comprobar los atributos de un objeto, o de una *clase*, tambien podemos llamarlos de la misma forma, o si preferimos modificarlos también podemos hacerlo:
+```python
+atributos_clase = car.class_attribute
+coche1.velocidad() # Mostrará la velocidad actual del coche1
+coche1.velocidad() = 120 # Establece la velocidad del coche1 en 120 
+```
+
