@@ -229,3 +229,14 @@ Ejemplos:
   </tr>
 </tbody>
 </table>
+
+----
+
+### OOP:
+
+Hay ciertas diferencias en la forma de llamar a un **modulo** de una clase y a un **atributo** de un objeto:
+```python
+object_from_class.module() # Así llamamos a un módulo
+
+object_from class.attribute # Así llamamos a un atributo
+```
