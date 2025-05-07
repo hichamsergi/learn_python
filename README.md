@@ -318,24 +318,17 @@ finally:
 
 ### **Programación Orientada a Objetos (OOP):**
 
-Es un paradigma de la programación que pretende organizar el codigo en "objetos", los cuales representan elementos del mundo real. Los objetos combinan *atributos* y funcionalidades(*métodos*) a traves de estructuras llamadas clases.
-
-#### Clases y objetos:
-
-Las clases son los moldes, o platillas, a traves de las cuales generamos los objeto, que son instancias de dichas clases.
-
-Los objetos son elementos, pertenecientes a una clase, que tienen *atributos* y *métodos*.
+Es un paradigma de la programación que pretende organizar el codigo en **objetos**, los cuales representan elementos del mundo real. Los objetos tienen **atributos**, cualidades que contienen datos, los cuales son definidos en las **clases**, lo que podríamos definir como los moldes que estructuran los atributos de los objetos. Dentro de las clases, a parte de atributos, podemos definir funcionalidades para los objetos, llamadas **métodos**. Ejemplo:
 
 ```python
 
 # Ejemplo de clase:
-class Car:
+class Car(object):
 
-    def __init__(self, color, velocidad): # Metodo constructor
-        self.color = color  # atributo de instancia
+    def __init__(self, color, velocidad): # Metodo constructor, definimos los atributos base
+        self.color = color  # Atributo de modulo
         self.velocidad = velocidad
 
-    #Método de la instancia:
     def acelerar(self, incremento):
         self.velocidad += incremento
         print(f"Velocidad actual: {self.velocidad} km/h")
@@ -343,20 +336,18 @@ class Car:
 # Creando un objeto de la clase Car
 mi_auto = Car("rojo", 50)
 
-#Haciendo uso del método acelerar:
+#Haciendo uso de la funcionalidad acelerar, para aumentar el atributo velocidad:
 mi_auto.acelerar(20)
 ```
 
-
 #### Atributos de clase *vs* Atributos de instancia:
 
-**Atributos de clase:** Se comparten con todos los demas objetos de una misma clase. Se ![alt text](image.png)inen fuera de cualqueir método.
+* **Atributos de clase:** Se comparten con todos los demas objetos de una misma clase. Se tinen fuera de cualqueir método.
 
-**Atributos de instancia:** Son atributos unicos para cada y se definen en el método `__init__`.
-
+* **Atributos de instancia:** Son atributos unicos para cada y se definen en el método `__init__`.
 
 ```python
-class Car:
+class Car(object):
 
   color = "rojo" #atributo de clase
 
@@ -364,16 +355,16 @@ class Car:
       self.color = color  # atributo de instancia
       self.velocidad = velocidad
 
-# Acceso directo al atributo de velocidad del objeto mi_auto:
+# Acceso directo al atributo de velocidad del objeto mi_auto asignandole una velocidad:
 mi_auto.velocidad = 50
 ```
 
 #### Método ```__init__```
 
-El metodo `__init__` inicializa los atributos de instancia al crear un objeto, también es llamado metodo constructor. Podemos asignar valores por defecto a los atributos de instancia:
+El metodo `__init__` inicializa los atributos para crear un objeto, también es llamado metodo constructor. Podemos asignar valores por defecto a los atributos de instancia:
 
 ```python
-class Car:
+class Car(object):
 
   # __init__ con valores por defecto:
   def __init__(self, color="red", velocidad=0):
@@ -382,14 +373,14 @@ class Car:
 
 #Objeto con valores asignados:
 coche1 = Car("blue", 120)
-#Objeto con valores por defecto:
+#Objeto con valores por defecto, coche2 será de color rojo y tendrá velocidad 0:
 coche2 = Car()
 ```
 
 El resto de métodos que no sean `__init__` operan sobre los atributos que se le han asignado al objeto en dicho método inicial:
 
 ```python
-class Car:
+class Car(object):
 
   def __init__(self, color="red", velocidad=0):
       self.color = color
@@ -405,17 +396,11 @@ coche1 = Car("blue", 120)
 coche1.acelerar(20)
 ```
 
-Podemos acceder, o modificar, los atributos de objeto haciendo uso de los *metodos*, de la *clase*, para así modificar los atributos del objeto:
-
-```python
-coche1.acelerar(20) # Aumenta la velocidad del coche1 en 20
-coche2.acelerar(50) # Aumenta la velocidad del coche2 en 50
-```
-
 Si queremos comprobar los atributos de un objeto, o de una *clase*, tambien podemos llamarlos de la misma forma, o si preferimos modificarlos también podemos hacerlo:
+
 ```python
 atributos_clase = car.class_attribute
-coche1.velocidad() # Mostrará la velocidad actual del coche1
-coche1.velocidad() = 120 # Establece la velocidad del coche1 en 120 
+coche1.velocidad # Mostrará la velocidad actual del coche1
+coche1.velocidad = 120 # Establece la velocidad del coche1 en 120 
 ```
 
