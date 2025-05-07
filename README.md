@@ -404,3 +404,8 @@ coche1.velocidad # Mostrará la velocidad actual del coche1
 coche1.velocidad = 120 # Establece la velocidad del coche1 en 120 
 ```
 
+---
+
+### **Analisis de Texto:**
+
+Entendemos `Analisis de texto` como la forma de extraer información relevante de textos.
