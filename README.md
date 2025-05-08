@@ -408,4 +408,4 @@ coche1.velocidad = 120 # Establece la velocidad del coche1 en 120
 
 ### **Analisis de Texto:**
 
-Entendemos `Analisis de texto` como la forma de extraer información relevante de textos.
+Entendemos `Analisis de texto` como la forma de extraer información relevante de textos. Como ejemplo de este proceso, hay un *Jupyter Notebook* en el repositorio, se puede encontrar en la ruta `Jupyter_Notebook/TextAnalysis_Task.ipynb`.

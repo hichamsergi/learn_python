@@ -240,3 +240,14 @@ object_from_class.module() # Así llamamos a un módulo
 
 object_from class.attribute # Así llamamos a un atributo
 ```
+
+De igual forma, la referencia `self` dentro de una misma clase se utiliza cuando queremos almacenar un atributo, o metodo, generado dentro de otro metodo, o para poder referenciar a otro metodo definido en el exterior del metodo desde el que pretendemos referenciarlo. Un ejemplo:
+
+```python
+class Persona:
+    def __init__(self, nombre):
+        self.nombre = nombre  # atributo de instancia
+
+    def saludar(self):
+        print("Hola, soy", self.nombre)  # accede al atributo con self.nombre
+```
