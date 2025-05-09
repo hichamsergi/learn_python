@@ -406,6 +406,75 @@ coche1.velocidad = 120 # Establece la velocidad del coche1 en 120
 
 ---
 
-### **Analisis de Texto:**
+### **Lectura de ficheros:**
 
-Entendemos `Analisis de texto` como la forma de extraer información relevante de textos. Como ejemplo de este proceso, hay un *Jupyter Notebook* en el repositorio, se puede encontrar en la ruta `Jupyter_Notebook/TextAnalysis_Task.ipynb`.
+La lectura de ficheros es una parte esencial de Python que nos permite abrir, leer e interactuar con documentos utilizando funciones propias de Python. Para poder operar con documentos hay que seguir los siguientes pasos:
+
+  #### 1. Abrir el documento:
+
+  ```python
+  with open('file.txt','r') as file:
+  ```
+  * `with`: Este metodo nos permite abrir el documento y **cerrarlo automaticamente**, una vez el codigo ejecutado bajo el haya sido completado.
+
+  * `open()`: Esta funcion integrada en Python nos permite abrir `file.txt` com un objeto e interactuar con el.
+
+  * `r`: Este parametro indica el modo en el que abrimos `file.txt`, en este caso lectura. Puede haber diferentes propositos para abrir un documento:
+
+    * `r`: Lectura.
+    * `w`: Escritura.
+    * `a`: Anexión.
+
+  #### 2. Leer el contenido:
+
+  ```python
+  with open('file.txt','r') as file:
+
+    contenido_file = file.read()
+  ```
+  Dado que tenemos abierto el documento, con el metodo `with`, ahora podemos leer el contenido con la función `file.read()`.
+
+  #### 3. Interactuar con el contenido:
+  ```python
+  with open('file.txt','r') as file:
+
+    contenido_file = file.read()
+
+    print(contenido_file)
+  ```
+   Al haber leido el contenido del documento, asignamos todo el contenido a una variable que lo almacenará. Ahora, `contenido_file` conteniene todo el texto que hay en `file.txt`, y podemos hacer con el lo que queramos, como mostrarlo.
+
+  #### 3.2 Leer el contenido linea a linea:
+
+  Ahora mismo tenemos todo el contenido del documento `file.txt` almacenado en una variable. Pero ese contenido es enorme y podriamos necesitar leer, solo, el contenido línea a línea. Para poder hacer eso necesitariamos la función `readline()`:
+  ```python
+  with open('file.txt','r') as file:
+
+    line1 = file.readline # Almacenamos la línea 1.
+  ```
+
+  La función `readline()` únicamente lee una línea a la vez. En el caso de querer leer el resto del contenido, tenemos que ser un poco más creativos:
+  ```python
+  with open('file.txt','r') as file:
+    
+    while True:
+      line = file.readline()
+
+      if not line: #Esta condición nos indica que ya no hay mas líneas
+
+        break #Devolviendo 'False'
+      
+      print(line)
+  ```
+
+  #### 3.3 Leer carácteres específicos:
+
+  Hay diferntes utilidades para hace esto:
+
+  ```python
+  file.seek(10) # Lee solo los carácteres de una posición especifica.
+                # 10, es la posición en byte de los carácteres a leer.
+
+  file.read(5) #Lees solo 5 carácteres y finaliza la lectura.
+  ```
+
