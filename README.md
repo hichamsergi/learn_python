@@ -406,11 +406,15 @@ coche1.velocidad = 120 # Establece la velocidad del coche1 en 120
 
 ---
 
-### **Lectura de ficheros:**
+### **Lectura y Escritura de ficheros:**
 
 La lectura de ficheros es una parte esencial de Python que nos permite abrir, leer e interactuar con documentos utilizando funciones propias de Python. Para poder operar con documentos hay que seguir los siguientes pasos:
 
-  #### 1. Abrir el documento:
+
+#### 1. Lectura:
+
+
+##### 1.1 Abrir el documento:
 
   ```python
   with open('file.txt','r') as file:
@@ -425,16 +429,16 @@ La lectura de ficheros es una parte esencial de Python que nos permite abrir, le
     * `w`: Escritura.
     * `a`: Anexión.
 
-  #### 2. Leer el contenido:
+  ##### 2. Leer el contenido:
 
   ```python
   with open('file.txt','r') as file:
 
     contenido_file = file.read()
   ```
-  Dado que tenemos abierto el documento, con el metodo `with`, ahora podemos leer el contenido con la función `file.read()`.
+  Dado que tenemos abierto el documento, con el metodo `with`, ahora podemos leer el contenido con la función `file.read()`. En el caso de que solo queramos leer cierta cantidad de carácteres del documento, el mismo método `file.read(4)`, nos permite indicar la cantidad de carácteres a leer.
 
-  #### 3. Interactuar con el contenido:
+  ##### 3. Interactuar con el contenido:
   ```python
   with open('file.txt','r') as file:
 
@@ -444,7 +448,7 @@ La lectura de ficheros es una parte esencial de Python que nos permite abrir, le
   ```
    Al haber leido el contenido del documento, asignamos todo el contenido a una variable que lo almacenará. Ahora, `contenido_file` conteniene todo el texto que hay en `file.txt`, y podemos hacer con el lo que queramos, como mostrarlo.
 
-  #### 3.2 Leer el contenido linea a linea:
+  ##### 3.2 Leer el contenido linea a linea:
 
   Ahora mismo tenemos todo el contenido del documento `file.txt` almacenado en una variable. Pero ese contenido es enorme y podriamos necesitar leer, solo, el contenido línea a línea. Para poder hacer eso necesitariamos la función `readline()`:
   ```python
@@ -467,7 +471,7 @@ La lectura de ficheros es una parte esencial de Python que nos permite abrir, le
       print(line)
   ```
 
-  #### 3.3 Leer carácteres específicos:
+  ##### 3.3 Leer carácteres específicos:
 
   Hay diferntes utilidades para hace esto:
 
@@ -478,3 +482,68 @@ La lectura de ficheros es una parte esencial de Python que nos permite abrir, le
   file.read(5) #Lees solo 5 carácteres y finaliza la lectura.
   ```
 
+#### 2. Escritura:
+
+El uso que le podemos dar a este modo de documentos, sería el de crear o sobreescribir documentos con contenido. La forma en la que abrimos los documentos es la misma que el metodo de lectura, lo que cambia es nuestra interacción con el documento:
+
+  ##### 1.2 Abrir el documento:
+
+  ```python
+  with open('file.txt','w') as file:
+  ```
+
+  * ``'w'``: De esta forma estamos indicando que lo que procede a hacer con file.txt es escribir en el documento.
+
+  ##### 2. Escribir en el documento:
+  ```python
+  with open('file.txt','w') as file:
+
+    file.write('This is a new line n1\n')
+    file.write('This is a new line n2\n')
+  ```
+
+  El metodo `write` nos permite escribir contenido en el documentop. En el ejemplo superior lo que tenemos son dos nuevas líneas de texto en el documento file.txt:
+
+  * `file.write('This is a new line n1\n')`: Esto añadirá una nueva linea con el contenido `This is a new line n1`.
+
+  * `\n`: Añadimos la expresión regular a final de líne para hacer el salto a la siguiente línea.
+
+  Sobre este principio podemos iterar en función del contenido que queramos añadir: 
+
+  ```python
+
+  Lines = ["This is line 1", "This is line 2", "This is line 3"] # Generamos una lista con datos
+
+  with open('file.txt','w') as file:
+
+    for line in Lines:
+      
+      file.write(line+'\n') # Iteramos sobre el contenido de la lista
+
+
+  ```
+
+#### EXTRA: Añadir datos a un documento:
+
+En el caso de que ya exista el documento y solo queramos añadir contenido al mísmo, utilizamos el modo `a`, qué sería `append`. Ejemplo:
+```python
+with open('file.txt', 'a') as file:
+    file1.write(new_data + "\n")
+```
+
+La cominación de uno o varios metodo también es posible, esto es muy practico en el caso de que queramos copiar el contenido de un documento a otro. Sería algo parecido a generar un bucle dentro de otro, ya que debemos de abrir primero de todo, un documento en modo de lectura. Posteriormente, sobre el mismo metodo de lectura, abrimos otro documento pero en metodo de escritura para poder recibir datos de un documento hacia el otro. Ejemplo:
+```python
+with open('source.txt', 'r') as source_file:
+
+    with open('destination.txt', 'w') as destination_file:
+
+        for line in source_file:
+            
+            destination_file.write(line)
+```
+
+Otros modos interesantes de conocer serían:
+
+* `r+`: Lectura y escritura. No puede reducir el contenido del documento.
+* `w+`: Escritura y lectura. Puede eliminar contenido del documento.
+* `a+`: Añadir y leer. Si no existe el documento, lo crea.
