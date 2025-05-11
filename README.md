@@ -450,19 +450,21 @@ La lectura de ficheros es una parte esencial de Python que nos permite abrir, le
 
   ##### 3.2 Leer el contenido linea a linea:
 
-  Ahora mismo tenemos todo el contenido del documento `file.txt` almacenado en una variable. Pero ese contenido es enorme y podriamos necesitar leer, solo, el contenido línea a línea. Para poder hacer eso necesitariamos la función `readline()`:
+  Ahora mismo tenemos todo el contenido del documento `file.txt` almacenado en una variable. Pero ese contenido es enorme y podriamos necesitar leer, solo, el contenido línea a línea. Para poder hacer eso necesitariamos la función `readlines()`:
+
   ```python
   with open('file.txt','r') as file:
 
-    line1 = file.readline # Almacenamos la línea 1.
+    line1 = file.readlines() # Almacenamos la línea 1.
   ```
 
-  La función `readline()` únicamente lee una línea a la vez. En el caso de querer leer el resto del contenido, tenemos que ser un poco más creativos:
+  La función `readlines()` únicamente lee una línea a la vez. En el caso de querer leer el resto del contenido, tenemos que ser un poco más creativos:
+
   ```python
   with open('file.txt','r') as file:
     
     while True:
-      line = file.readline()
+      line = file.readlines()
 
       if not line: #Esta condición nos indica que ya no hay mas líneas
 
@@ -476,8 +478,8 @@ La lectura de ficheros es una parte esencial de Python que nos permite abrir, le
   Hay diferntes utilidades para hace esto:
 
   ```python
-  file.seek(10) # Lee solo los carácteres de una posición especifica.
-                # 10, es la posición en byte de los carácteres a leer.
+  file.seek(10) # Establecemos el cursor de leectura en la posición 10.
+                # Empezará a leer a partir de la posición 10.
 
   file.read(5) #Lees solo 5 carácteres y finaliza la lectura.
   ```
