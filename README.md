@@ -406,7 +406,7 @@ coche1.velocidad = 120 # Establece la velocidad del coche1 en 120
 
 ---
 
-### **Lectura y Escritura de ficheros:**
+### Lectura y Escritura de ficheros:
 
 La lectura de ficheros es una parte esencial de Python que nos permite abrir, leer e interactuar con documentos utilizando funciones propias de Python. Para poder operar con documentos hay que seguir los siguientes pasos:
 
@@ -414,7 +414,7 @@ La lectura de ficheros es una parte esencial de Python que nos permite abrir, le
 #### 1. Lectura:
 
 
-##### 1.1 Abrir el documento:
+  ##### 1.1 Abrir el documento:
 
   ```python
   with open('file.txt','r') as file:
