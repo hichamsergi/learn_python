@@ -618,7 +618,7 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   * `info()`: Proporciona información general del dataframe.
   * `describe()`: Genera estadisticas genericas de los valores númericos.
   * `head() / tail()`: Muestra las *n* primeras/últimas filas del dataframe.
-  * `mean() / sum() / min() / max()`: Calcula estadisticas de columnas.
+  * `mean() / sum() / min() / max()`: Calcula estadisticas de columnas, mediana, suma, mínimo y máximo.
   * `sort_values()`: Ordena el dataframe por una columna o varias columnas.
   * `groupby()`: Agrupa datos por una o mas columnas.
   * `fillna() / drop() / rename()`: Rellenar datos casillas de datos vacias. Elimina y renombra, columnas.
@@ -628,3 +628,69 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   Esta estructura de datos de una unica dimensión, es algo similar a una unica columna de un *dataframe*, por lo que solo existe el indice de los datos.
 
   La forma que tenemos de interactuar con una *serie* es la misma que con los dataframes.
+
+  ------------
+
+### NumPy:
+
+  #### Numpy array
+
+  ```python
+  import numpy as np
+
+  a = np.array([[1,2],[3,4]])
+
+  a.size: 4 # Devuelve la longitud del array
+  a.ndim: 2 # Devuelve el número de arrays que contiene 'a'.
+  a.size: (2,2) # Devuelve la forma del arra, el numero de filas y columnas que tiene.
+  ```
+
+  #### Numpy index slicing:
+  ```python
+  c = np.array([0,1,2,3,4])
+
+  c[0] = 100
+
+  c: array([100,1,2,3,4])
+  ```
+
+  #### Numpy basic operations:
+  ```python
+  u = np.array([1,0])
+  v = np.array([0,1])
+
+  z = u + v
+
+  z: array([1,1]) # Vector addition and substration
+  ```
+
+  ```python
+  y = np.array([1,2])
+  v = np.array([3,2])
+  
+  z = 2 * y
+  z: array([2,4]) # Vector multiplication with a scalar
+
+  z = y * v
+  z: array([3,4]) # Vector multiplication
+
+  result = np.dot(y,v)
+  result: 5 # Prints the Doc product 
+  ```
+
+  #### Universal functions:
+
+  ```python
+
+  a = np.array([1,-1,1,-1,5])
+
+  a.mean(): 1 # Media
+  a.max(): 5 # Valor máximo
+
+  np.pi # Es el valor de pí, equivale a dicho número
+  np.sin # Aplica la función de seno a un valor
+
+  np.linspace(-2,2, num=5): -2 -1 0 1 2 # Nos devuelve la diferencia 
+                          #entre dos números pero repartida entre 5 indices.
+  ```
+
