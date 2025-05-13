@@ -549,3 +549,82 @@ Otros modos interesantes de conocer serían:
 * `r+`: Lectura y escritura. No puede reducir el contenido del documento.
 * `w+`: Escritura y lectura. Puede eliminar contenido del documento.
 * `a+`: Añadir y leer. Si no existe el documento, lo crea.
+
+-------------
+
+### PANDAS:
+
+Pandas es una libreria que contiene un conjunto de funciones predefinidas que son especialmente útiles para el *análisis de datos*. Para poder utilizar dichas funciones en nuestro código, debemos de improtar la libreria:
+
+```python
+import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
+```
+
+  #### Dataframes:
+
+  Los *dataframes* son un conjunto de datos de dos dimensiones, filas y columnas, que genera Pandas almacenando la información en RAM. Con estas estructuras, podemos generar dataframes de documentos preexistentes, como *.csv* o *.xlsx*. Por ejemplo:
+
+  ```python
+  import pandas as pd
+
+  path2_csv = 'text2dataframe.csv'
+
+  new_df = pd.read_csv(path2_csv) # Para leer xlsx sería: pd.read_xlsx()
+
+  new_df.head() # Veríamos las cabeceras de las columnas
+  ```
+
+  En cambio si lo que queremos es generar un *dataframe* de un diccionário propio descrito en nuestro código, la función de Pandas *DataFrame()* nos permitiria hacerlo. Ejemplo:
+
+  ```python
+  import pandas as pd
+
+  songs_dicc = {'Album':['Thriller','Back in Black','Bat Out of Hell'],
+                'Released':[1982,1980,1977],
+                'Length':['00:42:19','00:42:11','00:46:33']}
+
+  songs_dataframe = pd.DataFrame(songs_dicc)
+  ```
+
+  Ahora podríamos seccionar parte de la información de forma que solo quisieramos ver o mostrar los albumes contenidos en el dataframe descrito previamente. Podemos hacerlo con una simple función:
+  
+  ```python
+  songs_dicc = {'Album':['Thriller','Back in Black','Bat Out of Hell'],
+                'Released':[1982,1980,1977],
+                'Length':['00:42:19','00:42:11','00:46:33']}
+
+  album_songs = df[['Album']] # Si queremos mas que solo 1 columna bastaría con añadir mas columnas.
+  ```
+
+  El acceso a columnas o datos que un dataframe también nos lo permite hacer el metodo `.iloc[]`, *index location*. Con este metodo podemos indicarle el acceso a los datos como si fuera un indice de una lista, dando primero la fila y posteriormente la columna:
+
+  ```python
+  df.iloc[0,0] # El output sería Thriller
+  df.iloc[0,1] # El output sería 1982
+  df.iloc[1,0] # El output sería Back in Black
+  ```
+
+  `.loc` tambien es muy útil, ya que podemos poner el nombre de las columnas como indice para buscar datos:
+
+  ```python
+  df.loc[2,'Album'] # Accede a la posición 3 de la columna Album.
+  ```
+
+  ##### Atributos y metodos en Dataframes:
+
+  Alguno de los atributos y datos de datafranes son los siguientes:
+
+  * `shape`: Devuelve las dimensiones del dataframe, numero de filas y columnas. 
+  * `info()`: Proporciona información general del dataframe.
+  * `describe()`: Genera estadisticas genericas de los valores númericos.
+  * `head() / tail()`: Muestra las *n* primeras/últimas filas del dataframe.
+  * `mean() / sum() / min() / max()`: Calcula estadisticas de columnas.
+  * `sort_values()`: Ordena el dataframe por una columna o varias columnas.
+  * `groupby()`: Agrupa datos por una o mas columnas.
+  * `fillna() / drop() / rename()`: Rellenar datos casillas de datos vacias. Elimina y renombra, columnas.
+
+  #### Series:
+
+  Esta estructura de datos de una unica dimensión, es algo similar a una unica columna de un *dataframe*, por lo que solo existe el indice de los datos.
+
+  La forma que tenemos de interactuar con una *serie* es la misma que con los dataframes.
