@@ -604,10 +604,10 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   df.iloc[1,0] # El output sería Back in Black
   ```
 
-  `.loc` tambien es muy útil, ya que podemos poner el nombre de las columnas como indice para buscar datos:
+  `.loc` tambien es muy útil, ya que podemos poner el nombre de las columnas y filas como indice para buscar datos:
 
   ```python
-  df.loc[2,'Album'] # Accede a la posición 3 de la columna Album.
+  df.loc['a','Album'] # Accede a la posición 3 de la columna Album.
   ```
 
   ##### Atributos y metodos en Dataframes:
