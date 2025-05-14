@@ -633,12 +633,23 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
 ### NumPy:
 
-  #### Numpy array
+  Es una libreria de python que nos permite manipular datos numéricos de forma eficiente, tales como trabajar con arrays multidimensionales, realizar operaciones matemáticas y estadisticas muy rapidamente.
+
+  #### Numpy array:
+
+  Los *arrays de Numpy* es la estructura de datos esencial de dicha libreria, es muy similar a una lista basica de python, pero con la diferencia de que ejecuta calculos matemáticos potentes de forma rapida. También es importante puntualizar que contiene SOLO datos del mismo tipo, como podrían ser *int* o *float*.
 
   ```python
   import numpy as np
 
+  e_lista = [1,2,3,4]
+
   a = np.array([[1,2],[3,4]])
+
+  print(e_lista + e_lista): [1,2,3,4,1,2,3,4] # Devuelve la suma de las listas
+
+  print(a + a): array([[2,4],
+                       [6,8]]) # Suma los valores que contienen los arrays
 
   a.size: 4 # Devuelve la longitud del array
   a.ndim: 2 # Devuelve el número de arrays que contiene 'a'.
@@ -646,12 +657,17 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   ```
 
   #### Numpy index slicing:
+
+  El slicing que podemos hacer, es el mismo que el de una lista ya que es muy similar a ese tipo de estructura de datos:
+  
   ```python
   c = np.array([0,1,2,3,4])
 
   c[0] = 100
 
   c: array([100,1,2,3,4])
+
+  c[0:2]: array([100,1,2])
   ```
 
   #### Numpy basic operations:
