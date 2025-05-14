@@ -653,7 +653,7 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
   a.size: 4 # Devuelve la longitud del array
   a.ndim: 2 # Devuelve el número de arrays que contiene 'a'.
-  a.size: (2,2) # Devuelve la forma del arra, el numero de filas y columnas que tiene.
+  a.shape: (2,2) # Devuelve la forma del arra, el numero de filas y columnas que tiene.
   ```
 
   #### Numpy index slicing:
@@ -670,33 +670,61 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   c[0:2]: array([100,1,2])
   ```
 
+  #### Funciones estadísticas de Numpy:
+
+  Hay ciertas funciones de Numpy que nos permiten extraer datos estadísticos de los arrays que generamos:
+
+  ```python
+
+  import numpy as np
+
+  a = ([1,2,3,4,5])
+
+  a_deviation = a.std() # Nos muestra la desviación estandar del array indicado.
+
+  ```
+  ###### *¿Qué es la desviación estándar?*
+  Nos indica el promedio de distancia de los diferentes componentes del array respecto a la media del mismo.
+  
+
   #### Numpy basic operations:
+
+  Estas son algunas funciones matemáticas basicas que podemos aplicar sobre arrays:
+
   ```python
   u = np.array([1,0])
   v = np.array([0,1])
 
   z = u + v
+  z = np.add(u,v) # Es lo mismo que la operación anterior
+  z: array([1,1]) # Vector addition
 
-  z: array([1,1]) # Vector addition and substration
+  z = u - v
+  z = np.subtract(u,v) # Es lo mismo que la operación anterior
+  z: array([1,-1]) # Vector substration
   ```
 
   ```python
   y = np.array([1,2])
-  v = np.array([3,2])
+  v = np.array([2,1])
   
-  z = 2 * y
-  z: array([2,4]) # Vector multiplication with a scalar
-
   z = y * v
-  z: array([3,4]) # Vector multiplication
+  z = np.multiply(y,v) # Es lo mismo que la operación anterior
+  z: array([2,2]) # Vector multiply
+
+  z = y / v
+  z = np.divide(y,v) # Es lo mismo que la operación anterior
+  z: array([2,2]) # Vector division
 
   result = np.dot(y,v)
-  result: 5 # Prints the Doc product 
+  result: 4 # Doc product 
   ```
+  ###### *¿Qué es el producto escalar?*
+  Nos indica cuanto apunta un vector en la misma dirección que otro.
 
   #### Universal functions:
 
-  ```python
+  ```python 
 
   a = np.array([1,-1,1,-1,5])
 
