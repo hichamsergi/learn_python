@@ -722,7 +722,7 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   ###### *¿Qué es el producto escalar?*
   Nos indica cuanto apunta un vector en la misma dirección que otro.
 
-  #### Universal functions:
+  #### Funciones Universales:
 
   ```python 
 
@@ -736,5 +736,19 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
   np.linspace(-2,2, num=5): -2 -1 0 1 2 # Nos devuelve la diferencia 
                           #entre dos números pero repartida entre 5 indices.
+  ```
+
+  #### Arrays multidimensionales en NumPy:
+  
+  Utilizamos los arrays multidimensionales para poder describir matrices
+  ```python
+
+  ```
+  ###### *Matplotlib & NumPy:*
+  Matplotlib es una libreria que complementa muy bien a *numpy*, ya que es utilizada para generar gráficos y visualizar datos.
+  
+  ```python
+  import matplotlib.pyplot as plt
+
   ```
 
