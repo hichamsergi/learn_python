@@ -740,10 +740,19 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
   #### Arrays multidimensionales en NumPy:
   
-  Utilizamos los arrays multidimensionales para poder describir matrices
-  ```python
+  Utilizamos los arrays multidimensionales para poder describir matrices, pero en esencia, son arrays de *numpy* con mas de un una lista en su  interior.
 
+  ```python
+  import numpy as np
+
+  A = [[11,12,13],[21,22,23],[31,32,33]]
+
+  MdA = np.array(A)
   ```
+  Podemos acceder a los diferentes elementos del array con la notación ordinaria de acceso a los indices de listas, `MdA[1][2]`, o también podemos hacerlo de la siguiente forma `MdA[1,2]`. Con la coma indicamos que queremos acceder a la segunda fila de la matriz, al elemento situado en la tercera posición, el `23`.
+
+  El slicing de estos objetos de aplica de la misma forma que siempre. Poniendo un ejemplo, queremos recojer todos los datos de la tercera lista anidada, `MdA[2,0:]`. Si buscamos recojer todos los primeros elementos de las listas anidadas, `MdA[0:,0]`.
+
   ###### *Matplotlib & NumPy:*
   Matplotlib es una libreria que complementa muy bien a *numpy*, ya que es utilizada para generar gráficos y visualizar datos.
   
