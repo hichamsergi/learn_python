@@ -751,4 +751,5 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   import matplotlib.pyplot as plt
 
   ```
-
+  
+  Hay un ejemplo de uso de visualización de datos con Matplotlib en uno de los cuadernos de Jupyter: `Jupyter_Notebook/NumpyArrays&MatplotlibVisualization.ipynb`
