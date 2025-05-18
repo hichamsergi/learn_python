@@ -753,6 +753,37 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
   El slicing de estos objetos de aplica de la misma forma que siempre. Poniendo un ejemplo, queremos recojer todos los datos de la tercera lista anidada, `MdA[2,0:]`. Si buscamos recojer todos los primeros elementos de las listas anidadas, `MdA[0:,0]`.
 
+  #### Operaciones básicas de arrays mutidimensionales:
+
+  De igual forma en este caso también se repite la forma de operar. Al igual que las operaciones unidimensionales:
+
+
+  ```python
+  u = np.array([1,2],[3,4])
+  v = np.array([0,1],[2,3])
+
+  z = u + v
+
+  z: array([[1,3],
+            [5,7]])
+  z * 2:
+      array([[2,6],
+              [10,14]])
+
+  z * v:
+      array([[0,6],
+              [20,42]])
+
+  np.dot(u,v) # Calcula el producto escalar
+
+  np.sin(Z)
+
+  
+
+  ```
+
+
+
   ###### *Matplotlib & NumPy:*
   Matplotlib es una libreria que complementa muy bien a *numpy*, ya que es utilizada para generar gráficos y visualizar datos.
   
