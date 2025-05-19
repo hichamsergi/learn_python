@@ -718,7 +718,7 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
   result = np.dot(y,v)
   result: 4 # Doc product 
-  ```
+  ``` 
   ###### *¿Qué es el producto escalar?*
   Nos indica cuanto apunta un vector en la misma dirección que otro.
 
