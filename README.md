@@ -774,16 +774,10 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
       array([[0,6],
               [20,42]])
 
-  np.dot(u,v) # Calcula el producto escalar
-
-  np.sin(Z)
-
-  
-
+  np.dot(u,v) # En casos donde las matrices son de ordenes diferentes, 
+              # tienen diferente númerop de filas o de columnas,
+              # el producto escalar nos calcula el producto entre estas matrices de diferente tamaño.
   ```
-
-
-
   ###### *Matplotlib & NumPy:*
   Matplotlib es una libreria que complementa muy bien a *numpy*, ya que es utilizada para generar gráficos y visualizar datos.
   
@@ -793,3 +787,12 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   ```
   
   Hay un ejemplo de uso de visualización de datos con Matplotlib en uno de los cuadernos de Jupyter: `Jupyter_Notebook/NumpyArrays&MatplotlibVisualization.ipynb`
+
+
+### API:
+
+Las API, *Application Program Interface*,
+
+#### Librerias para API:
+#### APIs REST:
+  ##### 
