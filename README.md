@@ -791,8 +791,7 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
 ### API:
 
-Las API, *Application Program Interface*,
+Una API, *Application Program Interface*, es un intermediario entre dos programas. Funciona como un menú: tú pides lo que quieres (datos o acciones) y el sistema te lo entrega, sin necesidad de saber cómo funciona internamente. Esto nos permite acceder a servicios, datos o funcionalidades externas sin tener que construir todo desde cero, ahorrando tiempo y recursos.
 
-#### Librerias para API:
-#### APIs REST:
-  ##### 
+  ##### Practica:
+  Dado que tanto las funciones como el codigo puede varoar dependiendo de la API que se utilice, hay un ejemplo practico de funcionamiento en `Jupyter_Notebook/APItask.ipynb`.
