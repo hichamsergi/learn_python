@@ -596,7 +596,7 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   album_songs = df[['Album']] # Si queremos mas que solo 1 columna bastaría con añadir mas columnas.
   ```
 
-  El acceso a columnas o datos que un dataframe también nos lo permite hacer el metodo `.iloc[]`, *index location*. Con este metodo podemos indicarle el acceso a los datos como si fuera un indice de una lista, dando primero la fila y posteriormente la columna:
+  El acceso a columnas o datos que un dataframe también nos lo permite hacer el metodo `.iloc[]`, *index location*. Con este metodo podemos indicarle el acceso a los datos como si fuera un indice de una lista, dando primero la **fila y posteriormente la columna**:
 
   ```python
   df.iloc[0,0] # El output sería Thriller

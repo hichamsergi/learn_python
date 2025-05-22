@@ -101,3 +101,32 @@ Aclarar que el analisis de texto se compone de 3 pasos:
   1. **Eliminación de carácteres extraños**, carácteres no alfanumericos.
   2. **Normalización del texto**, estandarizar el contenido de dicho texto, dejandolo todo igual para que no haya errores de identificación por mayusculas o minúsculas.
   3. **Analisis del texto**. Una vez ya se ha normalizado todo, podemos proceder.
+
+
+### PANDAS:
+
+Utilidades en pandas:
+
+```python
+import pandas as pd
+
+page_data.columns = range(page_data.shape[1]) 
+                                      # Así quitamos posibles nombres raros nombres a las columnas,
+                                      # y pasan a tener números:
+                                      # 
+                                      # data = {'A': [1, 2], 'B': [3, 4], 'C': [5, 6]}
+                                      # df = pd.DataFrame(data)
+                                      #
+                                      # df.shape              # (2, 3) → 2 filas, 3 columnas
+                                      # df.shape[1]           # 3
+                                      # range(df.shape[1])    # range(0, 3) → [0, 1, 2]
+                                      #
+                                      # df.columns            #    1  2  3
+                                      #                       #  0 1  3  5
+                                      #                       #  1 2  4  6
+
+
+# Rename the column header from 'GDP (Million USD)' to 'GDP (Billion USD)':
+df.rename(columns = {'GDP (Million USD)' : 'GDP (Billion USD)'})
+```
+
