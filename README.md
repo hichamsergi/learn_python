@@ -794,4 +794,28 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 Una API, *Application Program Interface*, es un intermediario entre dos programas. Funciona como un menú: tú pides lo que quieres (datos o acciones) y el sistema te lo entrega, sin necesidad de saber cómo funciona internamente. Esto nos permite acceder a servicios, datos o funcionalidades externas sin tener que construir todo desde cero, ahorrando tiempo y recursos.
 
   ##### Practica:
-  Dado que tanto las funciones como el codigo puede varoar dependiendo de la API que se utilice, hay un ejemplo practico de funcionamiento en `Jupyter_Notebook/APItask.ipynb`.
+  Dado que tanto las funciones como el codigo puede variar dependiendo de la API que se utilice, hay un ejemplo practico de funcionamiento en `Jupyter_Notebook/APItask.ipynb`.
+
+### API REST y HTTP Request:
+
+A diferencia de las API simples, las API REST utilizan siempre el protocolo HTTP para poder acceder a la información necesaria, o poderla representar. Para poder acceder a los recursos que nos presenta el protocolo HTTP, utilizamos las URL (Localizador de Recursos Uniforme), que se compone de diferentes partes:
+
+  * `Esquema`: En este caso sería el procolo utilizado para poder acceder a la información, **HTTP**. Ejemplo: **```http:// ```**.
+
+  * `Dirección de internet`: Sería el dominio en el cual vamos a ir a recoger la infromación. Ejemplo: **```www.github.com/```**.
+
+  * `Ruta`: Ubicación de la información en el servidor. Ejemplo: **```hichamsergi/learn_python```**.
+
+#### Modulo *Requests* en python:
+
+El modulo de Request nos permite acceder a las diferentes solicitudes posibles del protocolo HTTP, como *GET*, *DELETE*, *POST* o *PUT*. Podemos utilizarlo de la siguiente forma:
+
+```python
+import requests
+
+URL = 'https://www.ibm.com/'
+
+req = requests.get(URL)
+
+req.status_code :200 # Esto nos indicaría que OK con la solicitud hecha.
+```
