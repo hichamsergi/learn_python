@@ -854,3 +854,5 @@ with open(path_file, 'wb') as f:  # Creamos un documento con el contenido de la 
   f.write(infor.content)
 
 ```
+
+Hay un ejemplo de uso en el directorio de cuadernos de *Jupyter*: `Jupyter_Notebook/WebScraping.ipynb`
