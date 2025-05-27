@@ -808,7 +808,14 @@ A diferencia de las API simples, las API REST utilizan siempre el protocolo HTTP
 
 #### Modulo *Requests* en python:
 
-El modulo de Request nos permite acceder a las diferentes solicitudes posibles del protocolo HTTP, como *GET*, *DELETE*, *POST* o *PUT*. Podemos utilizarlo de la siguiente forma:
+El modulo de Request nos permite acceder a las diferentes solicitudes posibles del protocolo HTTP:
+
+  * *GET*: Recibe datos del servidor.
+  * *DELETE*: Elimina datos del servidor.
+  * *POST*: Envia datos al servidor.
+  * *PUT*:  Actualiza datos ya existentes en el servidor.
+
+Las solicitudes las podemos utilizar de las siguiente forma conjuntamente con el modulo REQUEST:
 
 ```python
 import requests
@@ -818,4 +825,32 @@ URL = 'https://www.ibm.com/'
 req = requests.get(URL)
 
 req.status_code :200 # Esto nos indicaría que OK con la solicitud hecha.
+
+print(req.request.headers) :# Cabecera de la petición GET a traves del protocolo HTTP
+
+{'User-Agent': 'python-requests/2.29.0', 
+'Accept-Encoding': 'gzip, deflate, br', 
+'Accept': '*/*', 
+'Connection': 'keep-alive', 
+'Cookie': '_abck=1E7FF21BFFA661D8E9158C5CFDBB2552~-1~YAAQk2rcF22osNOWAQAAk7e8EQ0kJLsdr7+Ap6GhuxLQgwkDcnZlSrPKmjjd+08pGhpmnp/KBnpSe4b33KNBB+O9YTLaGZ7kKXtjlnEnKnyDF4lpjetn+Lw3h+taO0DNZaWnWKs4rw8kwckuXzZ2BXl2YhUfUCpDEZLKJ04pFE7EaXvxUN/DViE/yepQCYcbrB5NbT8LGsEKxytDk+i8HeAV2H6YnCTlbw+ZqmDniJFRiqqZLCx96xGKQ7V+noz50ul+aoc3+9bHL85M/C4exanogu9wPKlXx9nAQsVNKEAwIaToxXCAM/JksT4aAXxN/PlOymfEtg3mRcGnTgPWZSLIvFPzjQZElSQcOJeXhM6i+iqswqHNXMNaWrfqGWdkqOhR7GDD+lzPPnBqkJ0DseM1ETaAlqHYxNYuSNlh0JOETkBEXGYk/hkiBjyWLQ==~-1~-1~-1;bm_sz=9DA3FA83910CFE8732A349DBF47944FD~YAAQk2rcF26osNOWAQAAk7e8ERuXKt4ZlY/sm1KXSiaxb8hQwIlh92m3aV9dr11A4T7sFZFZHgBnDMGGPgpbrqcYse4rSfALtBvnQ1yDxKbLf/ME30l+E6K3S3uhhgPWAyrZiyNuWiVsXEUXml+rvz9lDqMhIe42oqVehf01TnSGok+VBHa3YL+501P0GBNrMxNWAmQLyJOjLC9eAWje+6oEDQG2L1xRUKjBAPyZsChw1Jjo6GhOb+Ow2KBBZh/hq0LtUY+dEYBNzjr7dqQm5ucSrofyi7nxHxRmqHfwbSEisZ+7F/8iEIWm9RudCHyqxurwPRFeBBgtYr+Toewx+ZmKbYULNViTN93o~3490101~3552566'}
+
+
+req.headers['date'] : 'Tue, 27 May 2025 12:34:30 GMT' # Accedemos a la fecha en la que hemos hecho la solicitud GET
+```
+
+Esta sería una forma de acceder a la información que contiene una solicitud GET, pero la utilidad de todo esto la tenemos en lo que llamaremos *web scraping*. El web scraping nos ayuda a extraer dicha información del contenido HTML de una pagina web, un ejemplo de ello sería:
+
+```python
+import request
+import os
+
+URL = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%205/data/Example1.txt'
+
+infor = requests.get(URL)
+
+path_file = os.getcwd()+'/file_data.txt' # Extraemos información del directorio activo y damos nombre al futuro documento.
+
+with open(path_file, 'wb') as f:  # Creamos un documento con el contenido de la petición GET de la URL.
+  f.write(infor.content)
+
 ```
