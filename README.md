@@ -1,8 +1,21 @@
 # APUNTES PYTHON:
 
-Los tipos de datos en Python son los siguientes:
+**ÍNDICE:**
+1. [Datos simples](#1-datos-simples)
+2. [Datos complejos](#2-datos-complejos)
+3. [Funciones](#3-funciones)
+4. [Manejo de Excepciones](#4-manejo-de-excepciones)
+5. [OOP](#5-programación-orientada-a-objetos-oop)
+6. [Lectura y Escritura de ficheros](#6-lectura-y-escritura-de-ficheros)
+7. [PANDAS](#7-pandas)
+8. [NumPy](#8-numpy)
+9. [API](#9-api)
+10. [API REST y HTTP Request](#10-api-rest-y-http-request)
 
-### 1. **Integer (int)**:
+
+## 1. Datos simples:
+
+### 1.1. **Integer (int)**:
    - Números enteros positivos o negativos sin parte decimal.
    - Ejemplo: `5`, `-10`, `0`.
    - **`int()`**: Convierte un valor a entero si es posible.
@@ -16,13 +29,13 @@ Los tipos de datos en Python son los siguientes:
      - Potencia: `a ** b`.
      - Módulo: `a % b`.
 
-### 2. **Float (float)**:
+### 1.2. **Float (float)**:
    - Números en coma flotante, es decir, que contienen una parte decimal.
    - Ejemplo: `3.14`, `-0.001`, `2.0`.
    - **`float()`**: Convierte un valor a flotante si es posible.
 
 
-### 3. **String (str)**:
+### 1.3. **String (str)**:
    - Cadenas de texto que se representan entre comillas simples o dobles.
    - Ejemplo: `"Hola"`, `'Mundo'`, `"123"`.
    - **Funciones útiles**:
@@ -34,13 +47,15 @@ Los tipos de datos en Python son los siguientes:
      - **`find()`**: Encuentra el indice del primer elemento. ``name.find("world")``
      - **`replace()`**: Remplaza el primer elemento por el segundo. ``name.replace("Joan","Hicham")`` 
 
-### 4. **Boolean (bool)**:
+### 1.4. **Boolean (bool)**:
    - Valores lógicos que solo pueden ser `True` o `False`.
    - Ejemplo: `True`, `False`.
 
 ---   
 
-### 5. **Listas (List)**
+## 2. Datos complejos:
+
+### 2.1. **Listas (List)**
 Una lista en Python es una colección ordenada, mutable y que permite elementos duplicados. Esto significa que podemos agregar, eliminar o modificar elementos en una lista después de haberla creado. Además, las listas pueden contener elementos de diferentes tipos.
 
 #### Ejemplos:
@@ -86,9 +101,7 @@ mi_lista = [4, 2, 1, 3]
 mi_lista.sort()  # Output: [1, 2, 3, 4]
 ```
 
----
-
-### 6. **Tuplas (Tuple)**
+### 2.2. **Tuplas (Tuple)**
 Una tupla es similar a una lista, pero es **inmutable**, lo que significa que no se puede modificar después de su creación. Se utilizan cuando no necesitamos cambiar los elementos una vez definidos.
 
 #### Ejemplos:
@@ -121,9 +134,7 @@ print(mi_tupla.count(2))  # Output: 3
 print(mi_tupla.index(3))  # Output: 2
 ```
 
----
-
-### 7. **Conjuntos (Set)**
+### 2.3. **Conjuntos (Set)**
 Un conjunto en Python es una colección **desordenada** de elementos **únicos**. Esto significa que no admite duplicados y no mantiene un orden específico.
 
 #### Ejemplos:
@@ -168,9 +179,7 @@ C = {1, 2}
 print(C.issubset(A))  # Output: True
 ```
 
----
-
-### 8. **Diccionarios (Dictionary)**
+### 2.4. **Diccionarios (Dictionary)**
 Un diccionario es una colección de pares **clave-valor** en la que cada clave debe ser única. Se accede a los valores a través de las claves, no por su posición como en listas o tuplas.
 
 #### Ejemplos:
@@ -209,8 +218,10 @@ mi_diccionario.update({"edad": 30, "ciudad": "Madrid"})
 # Obtener un valor con get (evita errores si la clave no existe)
 print(mi_diccionario.get("nombre", "No encontrado"))  # Output: Juan
 ```
+
 ----------------
-### **Funciones**
+
+## 3. **Funciones**
 
 Las funciones son bloques de código reutilizable que ejecutan ciertas operaciones descritas en el interior de dicha función. Hay dos tipos de funciones, **las predefinidas** y **las definidas por el usuario**.
 
@@ -232,7 +243,7 @@ Sumar 1 a un número proporcionado, "a"
 
 ----------------
 
-### **Manejo de Excepciones**
+## 4. **Manejo de Excepciones**
 
 Para manejar posibles errores, y administrar el codigo de una mejor forma, python permite el _manejo de excepciones_. De esta forma pretendemos que nuestro codigo identifique situaciones inesperadas durante su ejecución, para que estas no lo interrumpan accidentalmente:
 
@@ -316,7 +327,7 @@ finally:
 
 ---
 
-### **Programación Orientada a Objetos (OOP):**
+## 5. **Programación Orientada a Objetos (OOP):**
 
 Es un paradigma de la programación que pretende organizar el codigo en **objetos**, los cuales representan elementos del mundo real. Los objetos tienen **atributos**, cualidades que contienen datos, los cuales son definidos en las **clases**, lo que podríamos definir como los moldes que estructuran los atributos de los objetos. Dentro de las clases, a parte de atributos, podemos definir funcionalidades para los objetos, llamadas **métodos**. Ejemplo:
 
@@ -406,7 +417,7 @@ coche1.velocidad = 120 # Establece la velocidad del coche1 en 120
 
 ---
 
-### Lectura y Escritura de ficheros:
+## 6. Lectura y Escritura de ficheros:
 
 La lectura de ficheros es una parte esencial de Python que nos permite abrir, leer e interactuar con documentos utilizando funciones propias de Python. Para poder operar con documentos hay que seguir los siguientes pasos:
 
@@ -552,7 +563,7 @@ Otros modos interesantes de conocer serían:
 
 -------------
 
-### PANDAS:
+## 7. PANDAS:
 
 Pandas es una libreria que contiene un conjunto de funciones predefinidas que son especialmente útiles para el *análisis de datos*. Para poder utilizar dichas funciones en nuestro código, debemos de improtar la libreria:
 
@@ -631,7 +642,7 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
 
   ------------
 
-### NumPy:
+## 8. NumPy:
 
   Es una libreria de python que nos permite manipular datos numéricos de forma eficiente, tales como trabajar con arrays multidimensionales, realizar operaciones matemáticas y estadisticas muy rapidamente.
 
@@ -788,15 +799,18 @@ import pandas as pd # Definimos el acceso a pandas con la abreviatura de "pd"
   
   Hay un ejemplo de uso de visualización de datos con Matplotlib en uno de los cuadernos de Jupyter: `Jupyter_Notebook/NumpyArrays&MatplotlibVisualization.ipynb`
 
+-----
 
-### API:
+## 9. API:
 
 Una API, *Application Program Interface*, es un intermediario entre dos programas. Funciona como un menú: tú pides lo que quieres (datos o acciones) y el sistema te lo entrega, sin necesidad de saber cómo funciona internamente. Esto nos permite acceder a servicios, datos o funcionalidades externas sin tener que construir todo desde cero, ahorrando tiempo y recursos.
 
   ##### Practica:
   Dado que tanto las funciones como el codigo puede variar dependiendo de la API que se utilice, hay un ejemplo practico de funcionamiento en `Jupyter_Notebook/APItask.ipynb`.
 
-### API REST y HTTP Request:
+-----
+
+## 10. API REST y HTTP Request:
 
 A diferencia de las API simples, las API REST utilizan siempre el protocolo HTTP para poder acceder a la información necesaria, o poderla representar. Para poder acceder a los recursos que nos presenta el protocolo HTTP, utilizamos las URL (Localizador de Recursos Uniforme), que se compone de diferentes partes:
 
